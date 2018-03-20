@@ -5,10 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Commande</title>
   </head>
-  <body>
-          <p>
-                Cette page est la première page de monsite de fromage elle permet de présenter l'entreprise
-          </p>
-  </body>
+  	<body>
+  		<?php include ('header.html')//ENTETE?>
+  		<main>
+  			<h2>Recapitulatif de la commande</h2>
+  		</main>
+  		<?php include ('footer.html')//PIED DE PAGE?>
+ 	</body>
 </html>
 

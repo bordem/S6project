@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" href="styleTemporaire.css" />
     <title>Accueil du site</title>
   </head>
   <body>
-		<?php include('header.html');?>
+		<?php include('header.html');//ENTETE?>
         <main>
 			<article>
 				<h2>Venez découvrir notre grande sélection de produit</h2>
@@ -17,7 +18,7 @@
 				<a href="connexion.php"><img src="img/fidelisation.jpg"></img></a>
 			</article>
         </main>
-		<?php include ('footer.html')?>
+		<?php include ('footer.html')//PIED DE PAGE?>
   </body>
 </html>
 

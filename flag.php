@@ -5,22 +5,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Flags</title>
   </head>
-  <body>
-      
-        <p>
-            Entre votre numéro de flag et vous saurez quel failles vous avez trouver !
-        </p>
-        <?php
-            try
-            {
-                $bdd = new PDO('mysql:host=localhost;dbname=Flags;charset=utf8', 'dev', 'dev');
-                echo "Je fonctionne";
-            }
-            catch (Exception $e)
-            {
-                    die('Erreur : ' . $e->getMessage());
-            }
-        ?>
-  </body>
+  	<body>
+      	<main>
+		    <p>Entrez votre numéro de flag et vous saurez quel failles vous avez trouver !</p>
+		    <?php
+		        try
+		        {
+		            $bdd = new PDO('mysql:host=localhost;dbname=flags;charset=utf8', 'projet', 'projet');
+		            echo "Je fonctionne";?>
+		            <form action="flag.php" method="post">
+		        		<p>
+		            		<input type="text" name="Flag" />
+		            	</p>
+		            </form>
+		        <?php
+		        }
+		        catch (Exception $e)
+		        {
+		                die('Erreur : ' . $e->getMessage());
+		        }
+		    ?>
+		</main>
+        <?php include ('footer.html')//PIED DE PAGE?>
+  	</body>
 </html>
 

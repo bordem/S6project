@@ -6,16 +6,20 @@
     <title>Connexion</title>
   </head>
   <body>
+  		<?php include('header.html');//ENTETE?>
         <h1>Page de connexion</h1>
-        <form action="client.html" method="post">
-            <p>
-                <input type="text" name="Login" />
-                <input type="text" name="Password">
-                <input type="submit" value="Valider" />
-            </p>
-        </form>
-        <a href="preparateur.html">La page de présentation du preparateur de commande</a>
-        <a href="client.php">La page de présentation du client</a>
+        <main>
+		    <form action="client.html" method="post">
+		        <p>
+		            <input type="text" name="Login" />
+		            <input type="text" name="Password">
+		            <input type="submit" value="Valider" />
+		        </p>
+		    </form>
+		    <a href="preparateur.html">La page de présentation du preparateur de commande</a>
+		    <a href="client.php">La page de présentation du client</a>
+        </main>
+        <?php include ('footer.html')//PIED DE PAGE?>
   </body>
 </html>
 
