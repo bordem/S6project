@@ -1,17 +1,21 @@
-header
-{
+header{
 	background : #729fcf;
 }
-footer
-{
+footer{
 	background : #729fcf;
 }
-main
-{
+main{
 	background :#fce94f;
 }
-article
-{
+article{
 	border: 1px black solid;
 	text-align : center;
 }
+td{
+	border: 1px black solid;
+	text-align : center;
+}
+table{
+	border: 1px black solid;
+}
+
