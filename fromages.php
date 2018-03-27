@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -10,12 +9,13 @@
   		<?php include('header.html');?>
 		<main>
 		  	<h1>Nos fromages</h1>
+		  	<a href="connexion.php">Se connecter</a>
+		  	<a href="commande.php">Votre commande</a>
 		  	<?php
 
 				try
 				{
-					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
-					
+					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');					
 					//Si tout va bien, on peut continuer
 					//echo "Je suis connecté";
 					// On récupère tout le contenu de la table fromages
@@ -24,23 +24,26 @@
 					<table>			
 					<?php
 					$i=0;
+					$nbColonne = 3;
 					// On affiche chaque entrée une à une
 					while ($donnees = $reponse->fetch())
 					{
-						if($i%3==0)
+						$addr = "produit.php?nom=".$donnees['nom'];
+						echo $addr;
+						if($i%$nbColonne==0)
 							echo "<tr>";
 						?>
 							<p>
 								<td>
-									<form method="post" action="produit.php">
-									<?php echo $donnees['nom']; ?></br>
-									<img src="img/<?php echo $donnees['imgPath'];?>"></br>
-									<?php echo $donnees['prixKG']; ?>€/Kg</br>
-									<input type="submit" value="Commander" />
+										<?php echo $donnees['nom'];?></br>
+										<img src="img/<?php echo $donnees['imgPath'];?>"></br>
+										<?php echo $donnees['prixKG']; ?>€/Kg</br>
+										<?php echo '<a href="' . $addr . '">Voir le produit</a>';?>
+									</form>
 								</td>
 							</p>
 						<?php
-						if($i%3==2)
+						if($i%$nbColonne==$$nbColonne-1)
 							echo "</tr>";
 						$i=$i+1;
 					}
@@ -56,8 +59,8 @@
 				$reponse->closeCursor(); // Termine le traitement de la requête
 
 			?>
-		  	<a href="connexion.php">La page de connexion</a>
-		  	<a href="commande.php">La page de commande du client</a>
+		  	
+		  	
 		</main>
 		<?php include('footer.html');?>
   </body>
