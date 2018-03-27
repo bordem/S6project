@@ -13,4 +13,3 @@
   		<?php include ('footer.html')//PIED DE PAGE?>
  	</body>
 </html>
-
