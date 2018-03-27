@@ -11,11 +11,11 @@
 		    <?php
 		        try
 		        {
-		            $bdd = new PDO('mysql:host=localhost;dbname=flags;charset=utf8', 'projet', 'projet');
+		            $bdd = new PDO('mysql:host=localhost;dbname=Flag;charset=utf8', 'projet', 'projet');
 		            echo "Je fonctionne";?>
 		            <form action="flag.php" method="post">
-		        		<p>
-		            		<input type="text" name="Flag" />
+		        			<p>
+		            			<input type="text" name="Flag" />
 		            	</p>
 		            </form>
 		        <?php
@@ -29,4 +29,3 @@
         <?php include ('footer.html')//PIED DE PAGE?>
   	</body>
 </html>
-

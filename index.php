@@ -9,16 +9,16 @@
   <body>
 		<?php include('header.html');//ENTETE?>
         <main>
-			<article>
-				<h2>Venez découvrir notre grande sélection de produit</h2>
-				<a href="fromages.php"><img src="img/fromageDecouverte.jpg"></img></a>
-			</article>
-			<article>
-				<h2>Deja client? Venez vous inscrire !</h2>
-				<a href="connexion.php"><img src="img/fidelisation.jpg"></img></a>
-			</article>
+					<article>
+						<h2>Venez découvrir notre grande sélection de produit</h2>
+						<a href="fromages.php"><img src="img/fromageDecouverte.jpg"></img></a>
+
+					</article>
+					<article>
+						<h2>Deja client? Venez vous inscrire !</h2>
+						<a href="connexion.php"><img src="img/fidelisation.jpg"></img></a>
+					</article>
         </main>
 		<?php include ('footer.html')//PIED DE PAGE?>
   </body>
 </html>
-

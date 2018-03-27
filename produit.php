@@ -12,11 +12,19 @@
 			<?php
 			try
 			{
-					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');					
+					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
 					$req = "SELECT * FROM Fromages WHERE nom = '".$nomFromage."'" ;
 					// On récupère tout le contenu de la table fromages
 					$reponse = $bdd->query($req );
+					// On affiche chaque entrée une à une
+					while ($donnees = $reponse->fetch())
+					{
+						echo $donnees['nom'];?></br>
+							<img src="img/<?php echo $donnees['imgPath'];?>"></br>
+						<?php echo $donnees['prixKG']; ?>€/Kg</br>
+						<?php
+					}
 
 			}
 			catch (Exception $e)

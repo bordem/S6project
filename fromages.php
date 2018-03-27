@@ -15,13 +15,13 @@
 
 				try
 				{
-					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');					
+					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
 					//echo "Je suis connecté";
 					// On récupère tout le contenu de la table fromages
 					$reponse = $bdd->query('SELECT * FROM Fromages');
 					?>
-					<table>			
+					<table>
 					<?php
 					$i=0;
 					$nbColonne = 3;
@@ -29,7 +29,6 @@
 					while ($donnees = $reponse->fetch())
 					{
 						$addr = "produit.php?nom=".$donnees['nom'];
-						echo $addr;
 						if($i%$nbColonne==0)
 							echo "<tr>";
 						?>
@@ -59,10 +58,9 @@
 				$reponse->closeCursor(); // Termine le traitement de la requête
 
 			?>
-		  	
-		  	
+
+
 		</main>
 		<?php include('footer.html');?>
   </body>
 </html>
-

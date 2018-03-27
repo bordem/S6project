@@ -6,11 +6,13 @@
     <title>Commande a livrer</title>
   </head>
   <body>
-      
+		<?php include('header.html');?>
+      <main>
           <p>
-                Cette page
+                Cette page est la page des préparateurs de commande
           </p>
           <a href="livraison.html">La page des livraisons a préparer</a>
-  </body>
+			</main>
+		<?php include('footer.html');?>
+	</body>
 </html>
-
