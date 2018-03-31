@@ -20,9 +20,13 @@
 					// On affiche chaque entrée une à une
 					while ($donnees = $reponse->fetch())
 					{
-						echo $donnees['nom'];?></br>
-							<img src="img/<?php echo $donnees['imgPath'];?>"></br>
-						<?php echo $donnees['prixKG']; ?>€/Kg</br>
+						?><section>
+								<img src="img/<?php echo $donnees['imgPath'];?>"></br>
+							</section>
+							<section>
+								<?php echo $donnees['nom'];?></br>
+								<?php echo $donnees['prixKG']; ?>€/Kg</br>
+							</section>
 						<?php
 					}
 

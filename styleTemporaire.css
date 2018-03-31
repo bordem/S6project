@@ -1,13 +1,19 @@
 header{
 	background : #729fcf;
+	padding-bottom: 2%;
+	padding-top: 2%;
 }
 footer{
 	background : #729fcf;
+	padding-bottom: 2%;
+	padding-top: 2%;
 }
 main{
 	background :#fce94f;
 }
 article{
+	padding-bottom: 2%;
+	padding-top: 2%;
 	border: 1px black solid;
 	text-align : center;
 }
@@ -18,4 +24,3 @@ td{
 table{
 	border: 1px black solid;
 }
-

@@ -8,7 +8,7 @@
   <body>
   		<?php include('header.html');?>
 		<main>
-		  	<h1>Nos fromages</h1>
+		  	<h2>Nos fromages</h2>
 		  	<a href="connexion.php">Se connecter</a>
 		  	<a href="commande.php">Votre commande</a>
 		  	<?php
