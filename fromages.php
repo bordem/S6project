@@ -2,15 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="styleTemporaire.css" />
+    	<!--BOOTSTRAP-->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<link rel="stylesheet" href="styleTemporaire.css" />
     <title>Fromages</title>
   </head>
   <body>
+  		<div class="jumbotron text-center">
   		<?php include('header.html');?>
+  		</div>
 		<main>
-		  	<h2>Nos fromages</h2>
-		  	<a href="connexion.php">Se connecter</a>
-		  	<a href="commande.php">Votre commande</a>
+		  	<div class="presentation text-center">
+		  		<h2>Notre selection de fromages</h2>
+		  		<div class="col-sm-3"></div>
+		  		<a href="connexion.php" class="col-sm-2">Se connecter</a>
+		  		<div class="col-sm-2"></div>
+		  		<a href="commande.php" class="col-sm-2">Votre commande</a>
+		  		<div class="col-sm-3"></div>
+		  	</div>
 		  	<?php
 
 				try
@@ -33,12 +44,14 @@
 							echo "<tr>";
 						?>
 							<p>
-								<td>
+								<td class="">
+								<div class="col-sm-4 text-center">
 										<?php echo $donnees['nom'];?></br>
-										<img src="img/<?php echo $donnees['imgPath'];?>"></br>
+										<img src="img/<?php echo $donnees['imgPath'];?> " class="img-circle"></br>
 										<?php echo $donnees['prixKG']; ?>€/Kg</br>
 										<?php echo '<a href="' . $addr . '">Voir le produit</a>';?>
 									</form>
+								</div>
 								</td>
 							</p>
 						<?php
@@ -61,6 +74,8 @@
 
 
 		</main>
-		<?php include('footer.html');?>
+		<div class="jumbotron text-center">
+			<?php include('footer.html');?>
+  		</div>
   </body>
 </html>

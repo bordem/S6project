@@ -6,25 +6,13 @@
     <title>Flags</title>
   </head>
   	<body>
+  	<?php include ('header.html')//ENTETE DE PAGE?>
       	<main>
 		    <p>Entrez votre numéro de flag et vous saurez quel failles vous avez trouver !</p>
-		    <?php
-		        try
-		        {
-		            $bdd = new PDO('mysql:host=localhost;dbname=Flag;charset=utf8', 'projet', 'projet');
-		            echo "Je fonctionne";?>
-		            <form action="flag.php" method="post">
-		        			<p>
-		            			<input type="text" name="Flag" />
-		            	</p>
+		            <form action="flag2.php" method="post">
+		            	<input type="text" name="Flag" />
+		            	<input type="submit" value="Submit">
 		            </form>
-		        <?php
-		        }
-		        catch (Exception $e)
-		        {
-		                die('Erreur : ' . $e->getMessage());
-		        }
-		    ?>
 		</main>
         <?php include ('footer.html')//PIED DE PAGE?>
   	</body>
