@@ -38,6 +38,7 @@ table{
 td{
 	border:solid 1px;
 	font-size:large;
+	color: #cc0000;
 	
 }
 article{
@@ -47,4 +48,7 @@ article{
 section{
 	font-size:large;
 	color: #cc0000;
+}
+.footerConn{
+	margin-top:15%;
 }

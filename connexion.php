@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/png" href="img/icon.png" />
     <!--BOOTSTRAP-->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -52,17 +53,19 @@
         <main>
 		    <form action="connexion.php" method="post">
 		        <p>
-		            		<input type="text" name="Login" class="col-sm-12">
-
-		            	</div>
-		            	<input type="password" name="Password" class="col-sm-12"></br>
+		        	<div class="form-group col-md-6">
+		           		<input type="text" name="Login" class="form-control">
+		            </div>	         
+		            <div class="form-group col-md-6">
+		            	<input type="password" name="Password" class="form-control">
+		            </div>
 		            	<div class="col-sm-4"></div>
 		            	<input type="submit" value="Valider" class="col-sm-4"></br>
 		            	<div class="col-sm-4"></div>
 		        </p>
 		    </form>
         </main>
-        <div class="col-sm-12 jumbotron text-center">
+        <div class="col-sm-12 jumbotron text-center footerConn">
         <?php include ('footer.html')//PIED DE PAGE?>
         </div>
   </body>
