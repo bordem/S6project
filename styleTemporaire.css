@@ -17,6 +17,7 @@ body{
 main{
 	margin-top:0px;
 	padding:3%;
+	min-width:50%;
 }
 .presentation{
 	margin-top:0px;
@@ -31,15 +32,19 @@ main{
 table{
 	border:solid 1px;
 	margin-bottom :1%;
-	margin-left : 1%;
+	color : #cc0000;
 }
+
 td{
 	border:solid 1px;
-	text-align: center;
 	font-size:large;
-	color : #cc0000;
+	
 }
 article{
 	background-color:#e6e6e6;
 	padding:3%;
+}
+section{
+	font-size:large;
+	color: #cc0000;
 }

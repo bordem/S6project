@@ -32,7 +32,8 @@
 					// On récupère tout le contenu de la table fromages
 					$reponse = $bdd->query('SELECT * FROM Fromages');
 					?>
-					<table>
+					<div class="table-responsive">
+					<table class="table">
 					<?php
 					$i=0;
 					$nbColonne = 3;
@@ -44,10 +45,10 @@
 							echo "<tr>";
 						?>
 							<p>
-								<td class="">
-								<div class="col-sm-4 text-center">
+								<td>
+								<div class="col-sm-12 text-center">
 										<?php echo $donnees['nom'];?></br>
-										<img src="img/<?php echo $donnees['imgPath'];?> " class="img-circle"></br>
+										<img src="img/<?php echo $donnees['imgPath'];?> " class="img-fluid" alt="Responsive image" style=width:100%></br>
 										<?php echo $donnees['prixKG']; ?>€/Kg</br>
 										<?php echo '<a href="' . $addr . '">Voir le produit</a>';?>
 									</form>
@@ -61,6 +62,7 @@
 					}
 					?>
 					</table>
+					</div>
 					<?php
 				}
 				catch (Exception $e)

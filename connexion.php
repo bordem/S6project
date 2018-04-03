@@ -3,10 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--BOOTSTRAP-->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<link rel="stylesheet" href="styleTemporaire.css" />
     <title>Connexion</title>
   </head>
   <body>
-  		<?php include('header.html');//ENTETE?>
+  		<div class="jumbotron text-center">
+  			<?php include('header.html');//ENTETE?>
+  		</div>
       <?php
       session_start(); //commencer la session
 
@@ -15,16 +22,16 @@
         try
         {
 
-          $bdd = new PDO('mysql:host=localhost;dbname=souha', 'root', 'souha');// connexion avec la base
+          $bdd = new PDO('mysql:host=localhost;dbname=Prince', 'projet', 'projet');// connexion avec la base
 
-          $reponse = $bdd->prepare('SELECT * FROM users where email=\''.$_POST['Login'].'\' and password=\''.$_POST['Password'].'\''); //requete sql injection
+          $reponse = $bdd->prepare('SELECT * FROM User where email=\''.$_POST['Login'].'\' and password=\''.$_POST['Password'].'\''); //requete sql injection
           $reponse->execute();
           $donnee=$reponse->fetch();
 
           if($donnee!=false){ //si les donnees sont juste
-              $_SESSION['id']=$donnee['id'];
+              $_SESSION['id']=$donnee['IdUser'];
               $_SESSION['email']=$donnee['email'];
-              if($donnee['statut']=="client"){ //si statut ==client il va passer a la page client.php
+              if($donnee['status']=="client"){ //si statut ==client il va passer a la page client.php
                   header("Location:client.php");
                 }
                 else{
@@ -41,18 +48,22 @@
           die('Erreur : ' . $e->getMessage());
         }
       } ?>
-        <h1>Page de connexion</h1>
+        <h1 class="col-sm-12 text-center">Page de connexion</h1>
         <main>
 		    <form action="connexion.php" method="post">
 		        <p>
-		            <input type="text" name="Login" />
-		            <input type="password" name="Password">
-		            <input type="submit" value="Valider" />
+		            		<input type="text" name="Login" class="col-sm-12">
+
+		            	</div>
+		            	<input type="password" name="Password" class="col-sm-12"></br>
+		            	<div class="col-sm-4"></div>
+		            	<input type="submit" value="Valider" class="col-sm-4"></br>
+		            	<div class="col-sm-4"></div>
 		        </p>
 		    </form>
-		    <a href="preparateur.html">La page de présentation du preparateur de commande</a>
-		    <a href="client.php">La page de présentation du client</a>
         </main>
+        <div class="col-sm-12 jumbotron text-center">
         <?php include ('footer.html')//PIED DE PAGE?>
+        </div>
   </body>
 </html>
