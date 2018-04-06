@@ -39,7 +39,7 @@
                   header("Location:preparateur.php");// sinon a la page preparateur
                 }
           }
-          else { //sinon 
+          else { //sinon
              echo "<h4>Vous avez saisi des mauvais identifiants veillez ressayer</h4>";
           }
 
@@ -55,13 +55,14 @@
 		        <p>
 		        	<div class="form-group col-md-6">
 		           		<input type="text" name="Login" class="form-control">
-		            </div>	         
+		            </div>
 		            <div class="form-group col-md-6">
 		            	<input type="password" name="Password" class="form-control">
 		            </div>
-		            	<div class="col-sm-4"></div>
-		            	<input type="submit" value="Valider" class="col-sm-4"></br>
-		            	<div class="col-sm-4"></div>
+		            	<div class="col-sm-0"></div>
+		            	<center><input type="submit" value="valider" action="commande.php" /></center>
+		            	<div class="col-sm-0"></div>
+
 		        </p>
 		    </form>
         </main>

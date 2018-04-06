@@ -1,24 +1,39 @@
+<html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="icon" type="image/png" href="img/icon.png" />
-    <title>Client</title>
-  </head>
-  <body>
-      <?php
-        session_start(); // s'il passe par le llogin et pwd il peut passer a cette page
-        if(isset($_SESSION['id']) && isset($_SESSION['email'])){
-       ?>
-          <p>
-                Cette page est la présentation du client
-          </p>
-          <a href="fromages.php">La page de présentation des différents fromages</a>
-          <a href="commande.php">La page de commande du client</a>
-      <?php }else{
-          header("Location:connexion.php");
- 
-      }  ?>
-  </body>
+<head>
+<title>Espace client</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="csspageclient.css">
+
+</head>
+<body bgcolor="#f4511e">
+<center><h1>Espace client </h1></center>
+<form method="post" action="connexion.php">
+<p>
+<br />
+<br />
+<label for="email">Entrez votre E-mail : </label>
+<input type="email" name="mail" id="mail" placeholder="EX:alex123@gmail.com" size="30" maxlength="30" />
+<br />
+<label for="pass">Entrez votre mot de passe :</label>
+<input type="password" name="pass" id="pass" />
+<br />
+<label for="pass">R-entrez votre mot de passe :</label>
+<input type="password" name="pass1" id="pass1" />
+<br />
+<input type="submit" value="S'inscrire" />
+<input type="submit" value="Se connecter" action="connexion.php" />
+<br />
+<br />
+<center><img src="img/fromagerie.jpg" height="300" width="350"></img></center>
+</p>
+</form>
+
+
+
+
+
+
+</body>
+
 </html>

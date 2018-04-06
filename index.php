@@ -20,9 +20,11 @@
 				<a href="fromages.php"><img src="img/fromageDecouverte.jpg"></img></a>
 			</article>
 			<article class="col-sm-12 text-center">
-				<h2>Deja client? Venez vous inscrire !</h2>
-				<a href="connexion.php"><img src="img/fidelisation.jpg"></img></a>
-			</article>
+				<h2>Deja client?</h2>
+				<a href="connexion.php"><img src="img/clientfidele.jpg" height="80" width="80"></img></a>
+        <h2>Venez vous inscrire !</h2>
+				<a href="client.php"><img src="img/inscription2.jpeg" height="60" width="150"></img></a>
+        </article>
         </main>
 		<div class="col-sm-12 jumbotron text-center">
 			<?php include('footer.html');?>
