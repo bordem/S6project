@@ -54,10 +54,10 @@
 		    <form action="connexion.php" method="post">
 		        <p>
 		        	<div class="form-group col-md-6">
-		           		<input type="text" name="Login" class="form-control">
+		           		<input type="text" name="Login" class="form-control" placeholder="Email">
 		            </div>
 		            <div class="form-group col-md-6">
-		            	<input type="password" name="Password" class="form-control">
+		            	<input type="password" name="Password" class="form-control" placeholder="Mot de passe">
 		            </div>
 		            	<div class="col-sm-0"></div>
 		            	<center><input type="submit" value="valider" action="commande.php" /></center>

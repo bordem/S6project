@@ -16,7 +16,7 @@
 			<?php include('header.html');?>
 		</div>
       	<main>
-        <h1 class="col-sm-12 text-center">Commande a préparer :</h1>
+        <h1 class="col-sm-12 text-center">N° de commande a préparer :</h1>
           <?php
           	try
           	{

@@ -31,9 +31,31 @@
 								<img src="img/<?php echo $donnees['imgPath'];?>"></br>
 							</section>
 							<section class="col-sm-6 text-center">
-								<?php echo $donnees['nom'];?></br>
-								<?php echo $donnees['prixKG']; ?>€/Kg</br>
-								<?php echo "Fromage de ".$donnees['animal'];?></br>
+								</br>
+								</br>
+
+								<form action="aCommander.php" method="get">
+								  	<div class="col-sm-12">
+								  		<label for="name" class="col-sm-5">Nom : </label>
+								  		<input type="text" class="col-sm-6" name="name" value="<?php echo $donnees['nom'] ?>">
+								  	</div>
+								  	</br>
+								  	<div class="col-sm-12">
+								  		<div class="col-sm-5"></div>
+								  		<div class="col-sm-6"><?php echo "Prix au kilo : ".$donnees['prixKG'] ?></div>
+								  	</div>
+								  	</br>
+								  	<div class="col-sm-12">
+								  		<div class="col-sm-5"></div>
+								  		<div class="col-sm-6"><?php echo "Fromage de ".$donnees['animal'];?></div>
+								  	</div>
+								  	</br>
+									<div class="col-sm-12">
+								  		<label for="quantity" class="col-sm-5">Combien de kilos ? : </label>
+								  		<input type="number" class="col-sm-6" name="quantity" min="0" max="10">
+								  	</div>
+								  	<input type="submit">
+								</form>
 							</section>
 						<?php
 					}
