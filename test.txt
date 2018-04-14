@@ -1,0 +1,12 @@
+<?php
+  session_start(); // s'il passe par le llogin et pwd il peut passer a cette page
+  if(isset($_SESSION['id']) && isset($_SESSION['email'])){
+ ?>
+<?php include ('header.html')//ENTETE?>
+<main>
+  <h2>Recapitulatif de la commande</h2>
+</main>
+<?php }else{
+  header("Location:connexion.php");
+}  ?>
+<?php include ('footer.html')//PIED DE PAGE?>

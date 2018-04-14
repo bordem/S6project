@@ -15,6 +15,9 @@
 <br />
 
 <a href=index.php color="white" class="col-sm-4">Retour a l'accueil</a>
+<script>
+udjkhfsvgvjhdjh,jhkk
+</script>
 
 </body>
 </html>

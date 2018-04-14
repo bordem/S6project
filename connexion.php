@@ -23,24 +23,23 @@
         try
         {
 
-          $bdd = new PDO('mysql:host=localhost;dbname=Prince', 'projet', 'projet');// connexion avec la base
+          $bdd = new PDO('mysql:host=localhost;dbname=souha', 'root', 'souha');// connexion avec la base
 
-          $reponse = $bdd->prepare('SELECT * FROM User where email=\''.$_POST['Login'].'\' and password=\''.$_POST['Password'].'\''); //requete sql injection
+          $reponse = $bdd->prepare('SELECT * FROM users where email="'.$_POST['Login'].'" and password="'.$_POST['Password'].'"'); //requete sql injection
           $reponse->execute();
           $donnee=$reponse->fetch();
 
           if($donnee!=false){ //si les donnees sont juste
-              $_SESSION['id']=$donnee['IdUser'];
+              $_SESSION['id']=$donnee['id'];
               $_SESSION['email']=$donnee['email'];
-              if($donnee['status']=="client"){ //si statut ==client il va passer a la page client.php
-                  header("Location:client.php");
-                }
-                else{
-                  header("Location:preparateur.php");// sinon a la page preparateur
-                }
+
+              if($donnee["statut"] == "preparateur")
+                header("Location:preparateur.php");
+              else
+                header("Location:commande.php");
           }
           else { //sinon
-             echo "<h4>Vous avez saisi des mauvais identifiants veillez ressayer</h4>";
+             echo "<h4>Vous avez saisi des mauvais identifiants.</h4>";
           }
 
 
@@ -54,13 +53,13 @@
 		    <form action="connexion.php" method="post">
 		        <p>
 		        	<div class="form-group col-md-6">
-		           		<input type="text" name="Login" class="form-control">
+		           		<input type="text" name="Login" class="form-control" placeholder="Email">
 		            </div>
 		            <div class="form-group col-md-6">
-		            	<input type="password" name="Password" class="form-control">
+		            	<input type="password" name="Password" class="form-control" placeholder="Mot de passe">
 		            </div>
 		            	<div class="col-sm-0"></div>
-		            	<center><input type="submit" value="valider" action="commande.php" /></center>
+		            	<center><input type="submit" value="valider" /></center>
 		            	<div class="col-sm-0"></div>
 
 		        </p>
