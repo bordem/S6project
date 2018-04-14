@@ -21,18 +21,14 @@
 					<label for="email" class="col-sm-2 text-center" >Entrez votre E-mail : </label>
 					<input type="email" name="mail" id="mail" placeholder="Ex : alex123@gmail.com" size="30" maxlength="30" class="col-sm-6 text-center" /></br>
 				</div>
-
-				<div class="col-sm-12 text-center" >
+					<div class="col-sm-12 text-center" >
 					<label for="pass" class="col-sm-2 text-center">Entrez votre mot de passe :</label>
 					<input type="password" name="pass" id="pass" class="col-sm-6 text-center"/></br>
 				</div>
-
-
 				<div class="col-sm-12 text-center" >
-					<label for="pass" class="col-sm-2 text-center">Re-entrez votre mot de passe :</label>
+					<label for="pass" class="col-sm-2 text-center">Re-eœntrez votre mot de passe :</label>
 					<input type="password" name="pass1" id="pass1" class="col-sm-6 text-center"/></br>
 				</div>
-
 				<div class="col-sm-12 text-center" >
 					<input class="col-sm-3" type="submit" value="S'inscrire" />
 					<div class="col-sm-1"></div>

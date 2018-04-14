@@ -49,7 +49,7 @@
 								<td>
 								<div class="col-sm-12 text-center">
 										<?php echo $donnees['nom'];?></br>
-										<img src="img/<?php echo $donnees['imgPath'];?> " class="img-fluid" alt="Responsive image" style=width:100%></br>
+										<a href=<?php echo $addr ?>><img src="img/<?php echo $donnees['imgPath'];?> " class="img-fluid" alt="Responsive image" style=width:100%></a></br>
 										<?php echo $donnees['prixKG']; ?>€/Kg</br>
 										<?php echo '<a href="' . $addr . '">Voir le produit</a>';?>
 									</form>
