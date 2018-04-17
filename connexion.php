@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <script type="text/javascript" src="hello.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" type="image/png" href="img/icon.png" />
     <!--BOOTSTRAP-->
@@ -15,51 +16,18 @@
   		<div class="jumbotron text-center">
   			<?php include('header.html');//ENTETE?>
   		</div>
-      <?php
-      session_start(); //commencer la session
-
-      if(isset($_POST['Login']) && isset($_POST['Password'])){ //recuperer les labels
-
-        try
-        {
-
-          $bdd = new PDO('mysql:host=localhost;dbname=souha', 'root', 'souha');// connexion avec la base
-
-          $reponse = $bdd->prepare('SELECT * FROM users where email="'.$_POST['Login'].'" and password="'.$_POST['Password'].'"'); //requete sql injection
-          $reponse->execute();
-          $donnee=$reponse->fetch();
-
-          if($donnee!=false){ //si les donnees sont juste
-              $_SESSION['id']=$donnee['id'];
-              $_SESSION['email']=$donnee['email'];
-
-              if($donnee["statut"] == "preparateur")
-                header("Location:preparateur.php");
-              else
-                header("Location:commande.php");
-          }
-          else { //sinon
-             echo "<h4>Vous avez saisi des mauvais identifiants.</h4>";
-          }
-
-
-        }
-        catch (Exception $e) {
-          die('Erreur : ' . $e->getMessage());
-        }
-      } ?>
         <h1 class="col-sm-12 text-center">Page de connexion</h1>
         <main>
-		    <form action="connexion.php" method="post">
+		    <form action="connexion.php" name="login" method="post">
 		        <p>
 		        	<div class="form-group col-md-6">
-		           		<input type="text" name="Login" class="form-control" placeholder="Email">
+		           		<input type="text" name="email" class="form-control" placeholder="Email">
 		            </div>
 		            <div class="form-group col-md-6">
-		            	<input type="password" name="Password" class="form-control" placeholder="Mot de passe">
+		            	<input type="password" name="password" class="form-control" placeholder="Mot de passe">
 		            </div>
 		            	<div class="col-sm-0"></div>
-		            	<center><input type="submit" value="valider" /></center>
+		            	<center><input onClick="Login()" type="submit" value="valider" /></center>
 		            	<div class="col-sm-0"></div>
 
 		        </p>
