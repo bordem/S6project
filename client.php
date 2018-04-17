@@ -1,6 +1,5 @@
 <html>
 <head>
-  <script type="text/javascript" src="hello.js"></script>
 	<title>Espace client</title>
 	<meta charset="utf-8">
 	<!--BOOTSTRAP-->
@@ -26,7 +25,7 @@
 					<input type="password" name="pass" id="pass" class="col-sm-6 text-center"/></br>
 				</div>
 				<div class="col-sm-12 text-center" >
-					<label for="pass" class="col-sm-2 text-center">Re-eœntrez votre mot de passe :</label>
+					<label for="pass" class="col-sm-2 text-center">Confirmez votre mot de passe :</label>
 					<input type="password" name="pass1" id="pass1" class="col-sm-6 text-center"/></br>
 				</div>
 				<div class="col-sm-12 text-center" >
@@ -41,11 +40,5 @@
 	<div class="col-sm-12 jumbotron text-center footerConn">
   		<?php include('footer.html');//ENTETE?>
   	</div>
-		<!--
-		Je crois que c'est vraiment trop simple là !
-		it's really easy!
-		flag:MaFromagerie{y0u_re_a_good_w3b_cr1m1n3l}
-
--->
 </body>
 </html>
