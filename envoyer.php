@@ -18,23 +18,10 @@
 
     // if there are no errors, save user to database
 
-    $sql = "INSERT INTO cookie(nom, msg) VALUES('$nom',
- '$msg')";
+    $sql = "INSERT INTO cookie(nom, msg) VALUES('$nom','$msg')";
     mysqli_query($db, $sql);
     echo "Votre proposition a été envoyé.<br> Un administrateur va lire votre message dans les plus brefs délais.";
     ?>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php // le bot
 // la pour stocker le msg dans la base

@@ -26,9 +26,9 @@
 		            <div class="form-group col-md-6">
 		            	<input type="password" name="password" class="form-control" placeholder="Mot de passe">
 		            </div>
-		            	<div class="col-sm-0"></div>
+		            <div class="col-sm-0"></div>
 		            	<center><input onClick="Login()" type="submit" value="valider" /></center>
-		            	<div class="col-sm-0"></div>
+		            <div class="col-sm-0"></div>
 
 		        </p>
 		    </form>
