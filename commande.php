@@ -28,10 +28,13 @@
     <br />
     <br />
     <center><input type="submit" value="Récapitulatif de la commande" action="recap.php" /></center>
+<<<<<<< HEAD
     
 
 
 
 
+=======
+>>>>>>> 1cde6960f9fc8ab00743597ea20f60a77c120f7d
  	</body>
 </html>
