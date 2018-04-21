@@ -10,51 +10,59 @@
  	<link rel="stylesheet" href="styleTemporaire.css" />
     <title>Fromages</title>
   </head>
-  <body> 
+  <body>
   		<div class="jumbotron text-center">
-  		<?php include('header.html');?>
-
-</div>
-
-      <br />
-      <a href="showfromage.php?id=1" color="white" class="col-sm-4">Cammembert</a>
-      <br />
-      <a href="showfromage.php?id=2" color="white" class="col-sm-4">Brie</a>
-      <a href="showfromage.php?id=3" color="white" class="col-sm-4">Emmental</a>
-      <br />
-      <a href="showfromage.php?id=4" color="white" class="col-sm-4">Cheddar</a>
-      <a href="showfromage.php?id=5" color="white" class="col-sm-4">Raclette</a>
-      <br />
-      <a href="showfromage.php?id=6" color="white" class="col-sm-4">St-Nectaire</a>
-      <a href="showfromage.php?id=7" color="white" class="col-sm-4">Tomme</a>
-      <a href="showfromage.php?id=8" color="white" class="col-sm-4">Roquefort</a>
-
-      <?php
-
-      // connect to the database
-
-      $db = mysqli_connect('localhost', 'root', 'dev', 'prince');
-      $id = $_GET['id'];
-      $sql = "Select * from Fromages where idFromages=$id";
-
-      ?>
-
-          <?php // connexion base de données
-
-   $servername = "localhost";
-   $username = "root";
-   $password = "dev";
-
-   try {
-       $conn = new PDO("mysql:host=$servername;dbname=prince", $username, $password);
-       // set the PDO error mode to exception
-       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-       }
-   catch(PDOException $e)
-       {
-       echo "Connection failed: " . $e->getMessage();
-       }
+  			<?php include('header.html');?>
+		</div>
+<?php
+				try
+				{
+					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
+					//Si tout va bien, on peut continuer
+					//echo "Je suis connecté";HEELLLLO
+					// On récupère tout le contenu de la table fromages
+					$reponse = $bdd->query('SELECT * FROM Fromages');
+					?>
+					<div class="table-responsive">
+					<table class="table">
+					<?php
+					$i=0;
+					$nbColonne = 3;
+					// On affiche chaque entrée une à une
+					while ($donnees = $reponse->fetch())
+					{
+						$addr = "produit.php?nom=".$donnees['nom'];
+						if($i%$nbColonne==0)
+							echo "<tr>";
+						?>
+							<p>
+								<td>
+								<div class="col-sm-12 text-center">
+										<?php echo $donnees['nom'];?></br>
+										<a href=<?php echo $addr ?>><img src="img/<?php echo $donnees['imgPath'];?> " class="img-fluid" alt="Responsive image" style=width:100%></a></br>
+										<?php echo $donnees['prixKG']; ?>€/Kg</br>
+										<?php echo '<a href="' . $addr . '">Voir le produit</a>';?>
+									</form>
+								</div>
+								</td>
+							</p>
+						<?php
+						if($i%$nbColonne==$$nbColonne-1)
+							echo "</tr>";
+						$i=$i+1;
+					}
+					?>
+					</table>
+					</div>
+					<?php
+				}
+				catch (Exception $e)
+				{
+						die('Erreur : ' . $e->getMessage());
+				}
    ?>
+   		<div class="jumbotron text-center">
+  			<?php include('footer.html');?>
+		</div>
   </body>
 </html>

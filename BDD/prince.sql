@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.6.6deb5
+-- https://www.phpmyadmin.net/
 --
--- Client :  localhost
--- Généré le :  Lun 02 Avril 2018 à 13:08
--- Version du serveur :  5.7.21-0ubuntu0.16.04.1
--- Version de PHP :  7.0.28-0ubuntu0.16.04.1
+-- Host: localhost:3306
+-- Generation Time: Apr 21, 2018 at 10:08 AM
+-- Server version: 5.7.21-0ubuntu0.17.10.1
+-- PHP Version: 7.1.15-0ubuntu0.17.10.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,26 +17,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `Prince`
+-- Database: `prince`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Commande`
+-- Table structure for table `Commande`
 --
 
 CREATE TABLE `Commande` (
-  `IdCommande` int(11) NOT NULL,
+  `IdCmmande` int(1) NOT NULL,
   `IdUser` int(11) NOT NULL,
-  `Livraison` tinyint(1) NOT NULL
+  `Livraison` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Commande`
+-- Dumping data for table `Commande`
 --
 
-INSERT INTO `Commande` (`IdCommande`, `IdUser`, `Livraison`) VALUES
+INSERT INTO `Commande` (`IdCmmande`, `IdUser`, `Livraison`) VALUES
 (2, 1, 0),
 (3, 1, 0),
 (4, 2, 0);
@@ -44,7 +44,7 @@ INSERT INTO `Commande` (`IdCommande`, `IdUser`, `Livraison`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Fromages`
+-- Table structure for table `Fromages`
 --
 
 CREATE TABLE `Fromages` (
@@ -56,11 +56,11 @@ CREATE TABLE `Fromages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Fromages`
+-- Dumping data for table `Fromages`
 --
 
 INSERT INTO `Fromages` (`idFromages`, `nom`, `prixKG`, `imgPath`, `animal`) VALUES
-(1, 'Camenbert', 12.4, 'cheese-camembert.png', 'vache'),
+(1, 'Cammenbert', 12.4, 'cheese-camembert.png', 'vache'),
 (2, 'Brie', 18.2, 'cheese-brie.png', 'vache'),
 (3, 'Emmental', 12.3, 'cheese-emmental.png', 'vache'),
 (4, 'Cheddar', 5.4, 'cheese-cheddar.png', 'vache'),
@@ -72,7 +72,7 @@ INSERT INTO `Fromages` (`idFromages`, `nom`, `prixKG`, `imgPath`, `animal`) VALU
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Produits`
+-- Table structure for table `Produits`
 --
 
 CREATE TABLE `Produits` (
@@ -83,7 +83,7 @@ CREATE TABLE `Produits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `Produits`
+-- Dumping data for table `Produits`
 --
 
 INSERT INTO `Produits` (`idProduit`, `idCommande`, `idFromages`, `quantite`) VALUES
@@ -93,79 +93,74 @@ INSERT INTO `Produits` (`idProduit`, `idCommande`, `idFromages`, `quantite`) VAL
 -- --------------------------------------------------------
 
 --
--- Structure de la table `User`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE `users` (
   `IdUser` int(11) NOT NULL,
   `nom` varchar(15) NOT NULL,
   `prenom` varchar(15) NOT NULL,
   `login` varchar(12) NOT NULL,
-  `password` varchar(11) NOT NULL,
-  `email` varchar(40) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(48) NOT NULL,
   `status` varchar(12) NOT NULL,
   `Addr` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `User`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `User` (`IdUser`, `nom`, `prenom`, `login`, `password`, `email`, `status`, `Addr`) VALUES
+INSERT INTO `users` (`IdUser`, `nom`, `prenom`, `login`, `password`, `email`, `status`, `Addr`) VALUES
 (1, 'dupond', 'michel', 'michel', 'micheline', 'michel.micheline@hotmail.fr', 'client', ''),
-(2, 'pinnochio', 'jacques', 'jacques', 'preparateur', 'jacquesLePreparateur@gmail.com', 'preparateur', '');
+(2, 'pinnochio', 'jacques', 'jacques', 'MaFromagerie{D4MN_U_G0D_1NJ3c71NG}', 'jacquesLePreparateur@gmail.com', 'preparateur', '');
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `Commande`
+-- Indexes for table `Commande`
 --
 ALTER TABLE `Commande`
-  ADD PRIMARY KEY (`IdCommande`);
+  ADD PRIMARY KEY (`IdCmmande`);
 
 --
--- Index pour la table `Fromages`
+-- Indexes for table `Fromages`
 --
 ALTER TABLE `Fromages`
   ADD PRIMARY KEY (`idFromages`);
 
 --
--- Index pour la table `Produits`
+-- Indexes for table `Produits`
 --
 ALTER TABLE `Produits`
   ADD PRIMARY KEY (`idProduit`);
 
 --
--- Index pour la table `User`
+-- Indexes for table `users`
 --
-ALTER TABLE `User`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`IdUser`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `Commande`
+-- AUTO_INCREMENT for table `Commande`
 --
 ALTER TABLE `Commande`
-  MODIFY `IdCommande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdCmmande` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `Fromages`
+-- AUTO_INCREMENT for table `Fromages`
 --
 ALTER TABLE `Fromages`
   MODIFY `idFromages` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT pour la table `Produits`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `Produits`
-  MODIFY `idProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `User`
---
-ALTER TABLE `User`
+ALTER TABLE `users`
   MODIFY `IdUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

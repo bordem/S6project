@@ -2,10 +2,10 @@
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost
--- Généré le :  Lun 02 Avril 2018 à 13:08
--- Version du serveur :  5.7.21-0ubuntu0.16.04.1
--- Version de PHP :  7.0.28-0ubuntu0.16.04.1
+-- Host: localhost
+-- Generation Time: Apr 21, 2018 at 10:23 AM
+-- Server version: 5.7.21-0ubuntu0.16.04.1
+-- PHP Version: 7.0.28-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `Flag`
+-- Database: `Flag`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `flags`
+-- Table structure for table `flags`
 --
 
 CREATE TABLE `flags` (
@@ -34,21 +34,21 @@ CREATE TABLE `flags` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `flags`
+-- Indexes for table `flags`
 --
 ALTER TABLE `flags`
   ADD PRIMARY KEY (`idFlag`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `flags`
+-- AUTO_INCREMENT for table `flags`
 --
 ALTER TABLE `flags`
   MODIFY `idFlag` int(11) NOT NULL AUTO_INCREMENT;
