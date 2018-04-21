@@ -14,6 +14,15 @@
   		<div class="jumbotron text-center">
   			<?php include('header.html');?>
 		</div>
+		<main>
+		<div class="presentation text-center">
+		  		<h2>Notre selection de fromages</h2>
+		  		<div class="col-sm-3"></div>
+		  		<a href="connexion.php" class="col-sm-2">Se connecter</a>
+		  		<div class="col-sm-2"></div>
+		  		<a href="commande.php" class="col-sm-2">Votre commande</a>
+		  		<div class="col-sm-3"></div>
+		</div>
 <?php
 				try
 				{
@@ -61,6 +70,7 @@
 						die('Erreur : ' . $e->getMessage());
 				}
    ?>
+   		</main>
    		<div class="jumbotron text-center">
   			<?php include('footer.html');?>
 		</div>
