@@ -1,38 +1,21 @@
 <html>
 <body bgcolor="#f4511e">
+  <?php
 
-<?php
-//xss attack
-    $nom = "";
-    $msg = "";
-    $errors = array();
-
-    // connect to the database
-
-    $db = mysqli_connect('localhost', 'root', 'dev', 'xss');
-
-    // if the validation button is clicked
-
-    $nom = $_POST['nom'];
-    $msg = $_POST['msg'];
-
-    // if there are no errors, save user to database
-
-    $sql = "INSERT INTO cookie(nom, msg) VALUES('$nom',
- '$msg')";
-    mysqli_query($db, $sql);
-    echo "Votre proposition a été envoyé.<br> Un administrateur va lire votre message dans les plus brefs délais.";
-    ?>
-
-
-
-
-
-
-
-
-
-
+  //xss attack
+      $nom = "";
+      $msg = "";
+      $errors = array();
+      // connect to the database
+      $db = mysqli_connect('localhost', 'root', 'dev', 'xss');
+      // if the validation button is clicked
+      $nom = $_POST['nom'];
+      $msg = $_POST['msg'];
+      // if there are no errors, save user to database
+      $sql = "INSERT INTO cookie(nom, msg) VALUES('$nom','$msg')";
+      mysqli_query($db, $sql);
+      echo "Votre proposition a été envoyé.<br> Un administrateur va lire votre message dans les plus brefs délais.";
+      ?>
 
 
 

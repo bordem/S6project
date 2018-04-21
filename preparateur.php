@@ -4,60 +4,47 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" type="image/png" href="img/icon.png" />
-		<!--BOOTSTRAP-->
+
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	 	<link rel="stylesheet" href="styleTemporaire.css" />
-    <title>Commande a livrer</title>
+    <title></title>
   </head>
   	<body>
   		<div class="jumbotron text-center">
 			<?php include('header.html');?>
 		</div>
-      	<main>
-        <h1 class="col-sm-12 text-center">N° de commande a préparer :</h1>
-          <?php
-          	try
-          	{
-          		$bdd = new PDO('mysql:host=localhost;dbname=souha;charset=utf8', 'root', 'souha');
-				//Si tout va bien, on peut continuer
-				//echo "Je suis connecté";
-				// On récupère tout le contenu de la table fromages
-				$reponse = $bdd->query('SELECT * FROM commande WHERE Livraison = 0 ');
+    
+    <?php
 
-				?>
-				<form action="livraison.php" method="get">
+    // connect to the database
 
-			  		<div class="form-group col-sm-5"></div>
-    				<div class="form-group col-sm-2">
-			  			<select class="form-control" size="1" name="commande">
-							<?php
+    $db = mysqli_connect('localhost', 'root', 'dev', 'prince');
+    $id = $_GET['id'];
+    $sql = "Select * from Fromages where idFromages=$id";
 
-							while ($donnees = $reponse->fetch())
-							{
-								echo '<option value="'.$donnees['IdCommande'].'">'.$donnees['IdCommande'].'</option>';
-							}
-							?>
+    ?>
 
-			  			</select>
-			  		</div>
-			  		<div class="form-group col-sm-5"></div>
+        <?php // connexion base de données
 
-					<div class="col-sm-4"></div>
-		            	<input type="submit" value="Valider" class="col-sm-4 form-control "></br>
-		            <div class="col-sm-4"></div>
-				</form>
-				<?php
+ $servername = "localhost";
+ $username = "root";
+ $password = "dev";
+
+ try {
+     $conn = new PDO("mysql:host=$servername;dbname=prince", $username, $password);
+     // set the PDO error mode to exception
+     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+     }
+ catch(PDOException $e)
+     {
+     echo "Connection failed: " . $e->getMessage();
+     }
+ ?>
 
 
-
-          	}
-			catch (Exception $e)
-			{
-				die('Erreur : ' . $e->getMessage());
-			}
-          ?>
 			</main>
 		<div class="jumbotron text-center col-sm-12 footerConn">
 			<?php include('footer.html');?>

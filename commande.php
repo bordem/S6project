@@ -28,6 +28,8 @@
     <br />
     <br />
     <center><input type="submit" value="Récapitulatif de la commande" action="recap.php" /></center>
+    
+
 
 
 
