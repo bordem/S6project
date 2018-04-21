@@ -11,6 +11,7 @@
     <title>Fromages</title>
   </head>
   <body>
+  
   		<div class="jumbotron text-center">
   		<?php include('header.html');?>
   		</div>
@@ -29,7 +30,7 @@
 				{
 					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
-					//echo "Je suis connecté";
+					//echo "Je suis connecté";HEELLLLO
 					// On récupère tout le contenu de la table fromages
 					$reponse = $bdd->query('SELECT * FROM Fromages');
 					?>
