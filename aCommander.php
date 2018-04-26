@@ -24,9 +24,10 @@
 		      	{
 		      		$nomFromage = $_GET['name'];
 		      		$quantiteFromage = $_GET['quantity'];
+		      		
 		      		//echo $quantiteFromage;
 		      		echo 'Merci d\'avoir commandé';
-		      		$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
+		      		$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
 					//echo "Je suis connecté";
 					$req = "SELECT IdCommande FROM `Commande` WHERE IdUser='".$_SESSION['id']."' AND Livraison = '0'" ;
@@ -35,7 +36,7 @@
 					while ($donnees = $reponse->fetch())
 					{
 						$idCommande=$donnees['IdCommande'];
-						//echo "IdCommande = ".$idCommande;	
+						//echo "IdCommande = ".$idCommande;
 					}
 					//echo "test";
 					$req = "SELECT idFromages FROM `Fromages` WHERE nom='".$nomFromage."' " ;

@@ -33,7 +33,7 @@
 
       // connect to the database
 
-      $db = mysqli_connect('localhost', 'projet', 'projet', 'Prince');
+      $db = mysqli_connect('localhost', 'projet', 'projet', 'prince');
       $id = $_GET['id'];
       $sql = "Select * from Fromages where idFromages=$id";
 
@@ -46,7 +46,7 @@
    $password = "projet";
 
    try {
-       $conn = new PDO("mysql:host=$servername;dbname=Prince", $username, $password);
+       $conn = new PDO("mysql:host=$servername;dbname=prince", $username, $password);
        // set the PDO error mode to exception
        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

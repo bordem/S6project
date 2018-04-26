@@ -13,15 +13,15 @@
   <body>
   		<div class="jumbotron text-center">
 	  		<?php include('header.html');
-	  		$nomFromage = $_GET['nom'];?>
+	  		$idFromage = $_GET['id'];?>
   		</div>
 		<main>
 			<?php
 			try
 			{
-					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
+					$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
-					$req = "SELECT * FROM Fromages WHERE nom = '".$nomFromage."'" ;
+					$req = "SELECT * FROM Fromages WHERE idFromages = '".$idFromage."'" ;
 					// On récupère tout le contenu de la table fromages
 					$reponse = $bdd->query($req );
 					// On affiche chaque entrée une à une
@@ -36,8 +36,9 @@
 
 								<form action="aCommander.php" method="get">
 								  	<div class="col-sm-12">
-								  		<label for="name" class="col-sm-5">Nom : </label>
-								  		<input type="text" class="col-sm-6" name="name" value="<?php echo $donnees['nom'] ?>">
+								  		<div class="col-sm-5"></div>
+								  		<div class="col-sm-6"><?php echo "Nom : ".$donnees['nom'] ?></div>
+								  		<input type="HIDDEN" name="name" value="<?php echo $donnees['nom'] ?>">
 								  	</div>
 								  	</br>
 								  	<div class="col-sm-12">

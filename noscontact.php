@@ -19,13 +19,13 @@
 			<h2>Veuillez nous contacter sur :</h2>
 			<h4>numéro de téléphone:0123456789</h4>
 			<h4> adresse mail:fromagerie@gmail.com</h4>
-			<form method="post" action="envoyer.php">
-			 <label for="nom">Votre nom(nom d'equipe) :</label>
-			 <input type="text" name="nom" id="nom" /></br>
-			 <label for="msg">Comment pensez-vous que je pourrais améliorer mon site ?</label><br />
-			 <textarea name="msg" id="msg" rows="3" cols="50"></textarea></br>
-			 <input type="submit" value="envoyer" />
-			</form>
+				<form method="post" action="envoyer.php">
+						 <label for="nom">Votre nom(nom d'equipe) :</label>
+						 <input type="text" name="nom" id="nom" /></br>
+						 <label for="msg">Comment pensez-vous que je pourrais améliorer mon site ?</label></br>
+						 <textarea name="msg" id="msg" rows="3" cols="50"></textarea></br>
+					 <input type="submit" value="envoyer" />
+				</form>
 		</main>
 		<div class="jumbotron text-center col-sm-12">
 			<?php include('footer.html');?>
