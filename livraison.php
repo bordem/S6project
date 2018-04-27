@@ -26,7 +26,7 @@
 					//echo "Je suis connecté";
 					// On récupère tout le contenu de la table fromages
 					//PARTIE CLIENT, AFFICHAGE DES ATTRIBUTS DU CLIENTS A LIVRER
-					$reponse3 = $bdd->query('SELECT IdUser FROM Commande WHERE idCommande ='.$_GET[commande].'');
+					$reponse3 = $bdd->query('SELECT IdUser FROM Commande WHERE idCmmande ='.$_GET[commande].'');
 					while ($donnees= $reponse3->fetch())
 					{
 						//echo $donnees['IdUser'];
