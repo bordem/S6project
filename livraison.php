@@ -21,7 +21,7 @@
 				try
 		      	{
 		      		echo 'Commande n° : '.$_GET['commande'].'</br>';
-		      		$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
+		      		$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
 					//echo "Je suis connecté";
 					// On récupère tout le contenu de la table fromages
@@ -30,7 +30,7 @@
 					while ($donnees= $reponse3->fetch())
 					{
 						//echo $donnees['IdUser'];
-						$reponse3 = $bdd->query('SELECT * FROM User WHERE idUser ='.$donnees['IdUser'].'');
+						$reponse3 = $bdd->query('SELECT * FROM users WHERE idUser ='.$donnees['IdUser'].'');
 						while ($donneesClient= $reponse3->fetch())
 						{
 							echo 'Nom : '.$donneesClient['nom'].'</br>';

@@ -20,7 +20,7 @@
 
     // connect to the database
 
-    $db = mysqli_connect('localhost', 'root', 'dev', 'prince');
+    $db = mysqli_connect('localhost', 'projet', 'projet', 'prince');
     $id = $_GET['id'];
     $sql = "Select * from Fromages where idFromages=$id";
 
@@ -29,8 +29,8 @@
         <?php // connexion base de données
 
  $servername = "localhost";
- $username = "root";
- $password = "dev";
+ $username = "projet";
+ $password = "projet";
 
  try {
      $conn = new PDO("mysql:host=$servername;dbname=prince", $username, $password);

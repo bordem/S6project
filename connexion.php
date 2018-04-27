@@ -1,46 +1,5 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<?php
-
-if(isset($_POST['connexion'])) { // bouton connexion cliqué
-    if(empty($_POST['pseudo'])) {
-        echo "Le champ Identifiant est vide.";
-    }
-    else {
-        if(empty($_POST['password'])) {
-            echo "Le champ Mot de passe est vide.";
-        }
-        else {
-            $pseudo = $_POST['pseudo'];
-            $pass = $_POST['password'];
-            $link = mysqli_connect("localhost", "projet", "projet", "prince");
-            $requete = mysqli_query($link, "SELECT * FROM users WHERE email = '".$pseudo."' AND password = '".$pass."'") or die(mysql_error());
-            if(mysqli_num_rows($requete) == 0) {
-                echo "L'identifiant ou le mot de passe est incorrect. Le compte n'a pas été trouvé.";
-            }
-            else {
-               $stat = mysqli_query($_SESSION['link'], "SELECT status FROM users WHERE email = '".$pseudo."' AND password = '".$pass."'") or die(mysql_error());
-
-                while ($row = mysqli_fetch_assoc($stat)) {
-					echo "status : {$row['status']} <br>";
-					$stat = $row['status'];
-					echo $stat;
-				}
-				
-                if ($stat == "client")
-                    header("Location: client.php"); // Redirection du navigateur
-                else if ($stat == "preparateur")
-                    header("Location: preparateur.php"); // Redirection du navigateur
-                mysqli_close($_SESSION['link']);
-                exit; //on affiche pas le reste de la page
-            
-            }
-        }
-    }
-}
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <script type="text/javascript" src="hello.js"></script>
@@ -57,15 +16,49 @@ if(isset($_POST['connexion'])) { // bouton connexion cliqué
   		<div class="jumbotron text-center">
   			<?php include('header.html');//ENTETE?>
   		</div>
+  		<?php
+      session_start(); //commencer la session
+
+      if(isset($_POST['Login']) && isset($_POST['Password'])){ //recuperer les labels
+
+        try
+        {
+
+          $bdd = new PDO('mysql:host=localhost;dbname=prince', 'projet', 'projet');// connexion avec la base
+
+          $reponse = $bdd->prepare('SELECT * FROM users where email=\''.$_POST['Login'].'\' and password=\''.$_POST['Password'].'\''); //requete sql injection
+          $reponse->execute();
+          $donnee=$reponse->fetch();
+
+          if($donnee!=false){ //si les donnees sont juste
+              $_SESSION['id']=$donnee['IdUser'];
+              $_SESSION['email']=$donnee['email'];
+              if($donnee['status']=="client"){ //si statut ==client il va passer a la page client.php
+                  header("Location:client.php");
+                }
+                else{
+                  header("Location:preparateur.php");// sinon a la page preparateur
+                }
+          }
+          else { //sinon 
+             echo "<h4>Vous avez saisi des mauvais identifiants veillez ressayer</h4>";
+          }
+
+
+        }
+        catch (Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+        }
+      } ?>
         <h1 class="col-sm-12 text-center">Page de connexion</h1>
         <main>
 		    <form action="connexion.php" name="Connexion" method="post">
 		        <p>
 		        	<div class="form-group col-md-6">
-		           		<input type="text" name="pseudo" class="form-control" placeholder="Email">
+		           		<input type="text" name="Login" class="form-control" placeholder="Email">
 		            </div>
 		            <div class="form-group col-md-6">
-		            	<input type="password" name="password" class="form-control" placeholder="Mot de passe">
+		            	<input type="password" name="Password" class="form-control" placeholder="Mot de passe">
 		            </div>
 		            <div class="col-sm-0"></div>
 		            	<center><input onClick="Login()" type="submit" value="connexion" name="connexion"/></center>
