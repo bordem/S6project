@@ -24,19 +24,23 @@
 		      	{
 		      		$nomFromage = $_GET['name'];
 		      		$quantiteFromage = $_GET['quantity'];
-		      		
+		      		//echo $quantiteFromage;
 		      		echo 'Merci d\'avoir commandé';
 		      		$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
-					$req = "SELECT IdCmmande FROM `Commande` WHERE IdUser='".$_SESSION['id']."' AND Livraison = '0'" ;
+					//echo "Je suis connecté";
+					$req = "SELECT IdCommande FROM `Commande` WHERE IdUser='".$_SESSION['id']."' AND Livraison = '0'" ;
 					$reponse = $bdd->query($req );
 					// On affiche chaque entrée une à une
 					while ($donnees = $reponse->fetch())
 					{
-						$idCommande=$donnees['IdCmmande'];
+						$idCommande=$donnees['IdCommande'];
+						//echo "IdCommande = ".$idCommande;	
 					}
+					//echo "test";
 					$req = "SELECT idFromages FROM `Fromages` WHERE nom='".$nomFromage."' " ;
 					$reponse1 = $bdd->query($req );
+					//echo "test0";
 					// On affiche chaque entrée une à une
 					while ($donnees1 = $reponse1->fetch())
 					{
@@ -46,12 +50,10 @@
 					//echo "test2";	
 					//echo "INSERT INTO `Produits` (`idProduit`,`idCommande`, `idFromages`, `quantite`) VALUES (NULL, '".$idCommande."','".$idFromages."','".$quantiteFromage."')";				
 					
-					$req = "INSERT INTO `Produits` (`idCommande`, `idFromages`, `quantite`) VALUES ('".$idCommande."','".$idFromages."','".$quantiteFromage."')";				
-					//echo "INSERT INTO `Produits` (`idCommande`, `idFromages`, `quantite`) VALUES ('".$idCommande."','".$idFromages."','".$quantiteFromage."')";
+					$req = "INSERT INTO `Produits` (`idProduit`,`idCommande`, `idFromages`, `quantite`) VALUES (NULL, '".$idCommande."','".$idFromages."','".$quantiteFromage."')";				
 					$reponse1 = $bdd->query($req );
-					
 					echo "</br>";	
-					echo "Vous avez commandé ".$quantiteFromage." kilo de ".$nomFromage." </br>" ; 	
+					echo "Vous avez commandé ".$quantiteFromage." kilo de ".$nomFromage."" ; 	
        	   		}
 				catch (Exception $e)
 				{

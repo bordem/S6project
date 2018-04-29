@@ -34,7 +34,7 @@
               $_SESSION['id']=$donnee['IdUser'];
               $_SESSION['email']=$donnee['email'];
               if($donnee['status']=="client"){ //si statut ==client il va passer a la page client.php
-                  header("Location:client.php");
+                  header("Location:fromages.php");
                 }
                 else{
                   header("Location:preparateur.php");// sinon a la page preparateur

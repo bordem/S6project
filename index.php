@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styleTemporaire.css" />
     <title>Accueil du site</title>
   </head>
-  <body>
+  <body class="bodyStyle">
   		<div class="jumbotron text-center">
 			<?php include('header.html');//ENTETE?>
 		</div>

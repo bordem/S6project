@@ -16,8 +16,14 @@
 		</div>
 		<main>
 
-		<h3 class="col-sm-12 text-center">Notre site à pour but de facilité la vente du fromage, pour les gens qui aiment les fromages venez decouvrir notre site il ya plein des surprises dans les sources :D !</h3>
-<!-- uu encodage --!>
+		<h4>
+			Les CTF informatique, font partie du domaine de la sécurité : les organisateurs mettent en place plusieurs épreuves et les participants doivent s’introduire dans un système afin de récupérer le drapeau (flag).
+			</br>
+			</br>
+			Selon votre niveau, vous aurez peut-être envie d’ignorer totalement certaines épreuves. Libre à vous, mais gardez en tête que les épreuves simples peuvent l’être vraiment ;-)
+			</br>
+		</h4>
+
 <!--
 Je crois que c'est vraiment trop simple là !
 it's really easy UU !
