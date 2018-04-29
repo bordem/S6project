@@ -15,8 +15,8 @@
 			<?php include('header.html')?>
 		</div>
 		<main>
-		
-		<h3 class="col-sm-12 text-center">Notre site est un joli site avec un code source bien commenté</h3>
+
+		<h3 class="col-sm-12 text-center">Notre site à pour but de facilité la vente du fromage, pour les gens qui aiment les fromages venez decouvrir notre site il ya plein des surprises dans les sources :D !</h3>
 <!-- uu encodage --!>
 <!--
 Je crois que c'est vraiment trop simple là !
@@ -30,4 +30,3 @@ flag:H36%&<F]M86=E<FEE>WDP=5]R95]A7V=O;V1?=S-B7V-R,6TQ;C-L?0``
 		</div>
 	</body>
 </html>
-
