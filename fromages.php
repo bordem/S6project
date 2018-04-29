@@ -27,6 +27,7 @@
 				try
 				{
 					$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
+					$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					//Si tout va bien, on peut continuer
 					//echo "Je suis connecté";
 					// On récupère tout le contenu de la table fromages
