@@ -28,7 +28,7 @@
 				{
 					$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
-					//echo "Je suis connecté";HEELLLLO
+					//echo "Je suis connecté";
 					// On récupère tout le contenu de la table fromages
 					$reponse = $bdd->query('SELECT * FROM Fromages');
 					?>
@@ -40,7 +40,7 @@
 					// On affiche chaque entrée une à une
 					while ($donnees = $reponse->fetch())
 					{
-						$addr = "produit.php?nom=".$donnees['nom'];
+						$addr = "produit.php?id=".$donnees['idFromages'];
 						if($i%$nbColonne==0)
 							echo "<tr>";
 						?>

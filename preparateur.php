@@ -15,27 +15,41 @@
   		<div class="jumbotron text-center">
 			<?php include('header.html');?>
 		</div>
-    
-    <?php
-
-    // connect to the database
-
-    $db = mysqli_connect('localhost', 'root', 'dev', 'prince');
-    $id = $_GET['id'];
-    $sql = "Select * from Fromages where idFromages=$id";
-
-    ?>
+    	
+    <h1 class="col-sm-12 text-center">Commande a préparer :</h1>
 
         <?php // connexion base de données
 
- $servername = "localhost";
- $username = "root";
- $password = "dev";
-
  try {
-     $conn = new PDO("mysql:host=$servername;dbname=prince", $username, $password);
-     // set the PDO error mode to exception
-     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     $bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
+				//Si tout va bien, on peut continuer
+				//echo "Je suis connecté";
+				// On récupère tout le contenu de la table fromages
+				$reponse = $bdd->query('SELECT * FROM Commande WHERE Livraison = 0 ');
+				
+				?>
+				<form action="livraison.php" method="get">
+			  		
+			  		<div class="form-group col-sm-5"></div>
+    				<div class="form-group col-sm-2">
+			  			<select class="form-control" size="1" name="commande">
+							<?php
+							
+							while ($donnees = $reponse->fetch())
+							{
+								echo '<option value="'.$donnees['IdCmmande'].'">'.$donnees['IdCmmande'].'</option>';
+							}
+							?>
+
+			  			</select>
+			  		</div>
+			  		<div class="form-group col-sm-5"></div>
+					
+					<div class="col-sm-4"></div>
+		            	<input type="submit" value="Valider" class="col-sm-4 form-control "></br>
+		            <div class="col-sm-4"></div>
+				</form>
+				<?php
 
      }
  catch(PDOException $e)

@@ -16,25 +16,58 @@
   		<div class="jumbotron text-center">
   			<?php include('header.html');//ENTETE?>
   		</div>
+  		<?php
+      session_start(); //commencer la session
+
+      if(isset($_POST['Login']) && isset($_POST['Password'])){ //recuperer les labels
+
+        try
+        {
+
+          $bdd = new PDO('mysql:host=localhost;dbname=prince', 'projet', 'projet');// connexion avec la base
+
+          $reponse = $bdd->prepare('SELECT * FROM users where email=\''.$_POST['Login'].'\' and password=\''.$_POST['Password'].'\''); //requete sql injection
+          $reponse->execute();
+          $donnee=$reponse->fetch();
+
+          if($donnee!=false){ //si les donnees sont juste
+              $_SESSION['id']=$donnee['IdUser'];
+              $_SESSION['email']=$donnee['email'];
+              if($donnee['status']=="client"){ //si statut ==client il va passer a la page client.php
+                  header("Location:client.php");
+                }
+                else{
+                  header("Location:preparateur.php");// sinon a la page preparateur
+                }
+          }
+          else { //sinon 
+             echo "<h4>Vous avez saisi des mauvais identifiants veillez ressayer</h4>";
+          }
+
+
+        }
+        catch (Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+        }
+      } ?>
         <h1 class="col-sm-12 text-center">Page de connexion</h1>
         <main>
-		    <form action="connexion.php" name="login" method="post">
+		    <form action="connexion.php" name="Connexion" method="post">
 		        <p>
 		        	<div class="form-group col-md-6">
-		           		<input type="text" name="email" class="form-control" placeholder="Email">
+		           		<input type="text" name="Login" class="form-control" placeholder="Email">
 		            </div>
 		            <div class="form-group col-md-6">
-		            	<input type="password" name="password" class="form-control" placeholder="Mot de passe">
+		            	<input type="password" name="Password" class="form-control" placeholder="Mot de passe">
 		            </div>
 		            <div class="col-sm-0"></div>
-		            	<center><input onClick="Login()" type="submit" value="valider" /></center>
+		            	<center><input onClick="Login()" type="submit" value="connexion" name="connexion"/></center>
 		            <div class="col-sm-0"></div>
-
 		        </p>
 		    </form>
         </main>
         <div class="col-sm-12 jumbotron text-center footerConn">
-        <?php include ('footer.html')//PIED DE PAGE?>
+        	<?php include ('footer.html')//PIED DE PAGE?>
         </div>
   </body>
 </html>
