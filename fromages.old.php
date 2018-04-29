@@ -10,7 +10,7 @@
  	<link rel="stylesheet" href="styleTemporaire.css" />
     <title>Fromages</title>
   </head>
-  <body> 
+  <body>
   		<div class="jumbotron text-center">
   		<?php include('header.html');?>
 
