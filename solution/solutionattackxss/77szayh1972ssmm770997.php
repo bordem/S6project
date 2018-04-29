@@ -1,7 +1,21 @@
 <?php
-session_start();
-//  $_SESSION["flag"]="This_should_be_kept_secret";
-setcookie ("flag","flag{d@m1n_h0w_y0u_f33l_s33ing_y0ur_c00ki3s_st0l3n}"); ?>
+/* These are our valid username and passwords */
+$user = 'userctf';
+$pass = 'xmagass42souha';
+
+if (isset($_COOKIE[['username']) && isset($_COOKIE['password')) {
+
+    if (($_POST['username'] != $user) || ($_POST['password'] != md5($pass))) {
+        header('Location: login.html');
+    } else {
+        echo 'Welcome back ' . $_COOKIE['username'];
+    }
+
+} else {
+    header('Location: login.html');
+}
+?>
+
 <html>
 <body bgcolor="#f4511e">
   <?php

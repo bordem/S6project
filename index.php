@@ -17,7 +17,7 @@
         <main>
 			<article class="col-sm-12 text-center">
 				<h2>Venez découvrir notre grande sélection de produit</h2>
-				<a href="fromages.php"><img src="img/fromageDecouverte.jpg"></img></a>
+				<a href="fromages.php"><img src="img/fromageriedec.jpg" width="1000" height="600" ></img></a>
 			</article>
 			<article class="col-sm-12 text-center">
 				<h2>Deja client?</h2>

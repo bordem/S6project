@@ -26,7 +26,7 @@
 <?php
 				try
 				{
-					$bdd = new PDO('mysql:host=localhost;dbname=Prince;charset=utf8', 'projet', 'projet');
+					$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 					//Si tout va bien, on peut continuer
 					//echo "Je suis connecté";HEELLLLO
 					// On récupère tout le contenu de la table fromages
