@@ -1,0 +1,39 @@
+/* ENTETE DE PAGE */
+
+div#entete {
+
+ width   : 100%;
+
+ height  : 10%
+
+ background-color : #f4511e;
+
+}
+
+
+
+/* CORPS DE PAGE */
+
+div#corps {
+
+ width   : 100%;
+
+ height  : 80%
+
+ background-color : white;
+
+}
+
+
+
+/* PIED DE PAGE */
+
+div#pied {
+
+ width   : 100%;
+
+ height  : 10%
+
+ background-color : #f4511e;
+
+}

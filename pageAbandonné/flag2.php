@@ -15,25 +15,37 @@
 			<?php include('header.html')?>
 		</div>
 		<main>
-		
-		<h4>
-			Les CTF informatique, font partie du domaine de la sécurité : les organisateurs mettent en place plusieurs épreuves et les participants doivent s’introduire dans un système afin de récupérer le drapeau (flag).
-			</br>
-			</br>
-			Selon votre niveau, vous aurez peut-être envie d’ignorer totalement certaines épreuves. Libre à vous, mais gardez en tête que les épreuves simples peuvent l’être vraiment ;-)
-			</br>
-		</h4>
-<!-- uu encodage --!>
-<!--
-Je crois que c'est vraiment trop simple là !
-it's really easy UU !
-flag:H36%&<F]M86=E<FEE>WDP=5]R95]A7V=O;V1?=S-B7V-R,6TQ;C-L?0``
-`
--->
-		</main>
-		<div class="jumbotron text-center col-sm-12 footerConn">
-			<?php include('footer.html');?>
-		</div>
-	</body>
-</html>
+        	<h1 class="col-sm-12 text-center" >Vérifier votre flag ici !</h1>
+				<?php
+				try
+		      	{
+		      		$bdd = new PDO('mysql:host=localhost;dbname=Flag;charset=utf8', 'projet', 'projet');
+					//Si tout va bien, on peut continuer
+				
+       	   	}
+       	   	
+			catch (Exception $e)
+			{
+				die('Erreur : ' . $e->getMessage());
+			}
+				
+				
+			?>
 
+
+
+
+
+
+
+
+
+
+
+
+		</main>
+        <div class="col-sm-12 jumbotron text-center footerConn">
+        	<?php include ('footer.html')//PIED DE PAGE?>
+        </div>
+  </body>
+</html>

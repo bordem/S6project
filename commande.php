@@ -1,40 +1,69 @@
-
+<?php
+      session_start(); //commencer la session
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/png" href="img/icon.png" />
+		<!--BOOTSTRAP-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="styleTemporaire.css" />
     <title>Commande</title>
   </head>
-  	<body bgcolor="#f4511e">
-    <center><p><I><h2>Bonjour !</h2></I></center>
-    <br />
-    <br />
-    <br />
-    <br />
-    <p><h3>Cochez le type de fromage que vous voulez commander !</h3></p>
-    <br />
-    <input type="checkbox" name="cammenbert" id="1" /> <label for="Cammenbert">Cammenbert</label><br />
-    <input type="checkbox" name="brie" id="2" /> <label for="Brie">Brie</label><br />
-    <input type="checkbox" name="emmental" id="3" /> <label for="Emmental">Emmental</label><br />
-    <input type="checkbox" name="cheddar" id="4" /> <label for="Cheddar">Cheddar</label><br />
-    <input type="checkbox" name="raclette" id="5" /> <label for="Raclette">Raclette</label><br />
-    <input type="checkbox" name="st-nectaire" id="6" /> <label for="St-Nectaire">St-Nectaire</label><br />
-    <input type="checkbox" name="tomme" id="7" /> <label for="Tomme">Tomme</label><br />
-    <input type="checkbox" name="roquefort" id="8" /> <label for="Roquefort">Roquefort</label><br />
-    <br />
-    <label for="quantite">Quantité en Kg : </label>
-    <input type="text" name="quantite" id="quantite" placeholder="EX:0.5" size="10" maxlength="10" />
-    <br />
-    <br />
-    <br />
-    <center><input type="submit" value="Récapitulatif de la commande" action="recap.php" /></center>
-<<<<<<< HEAD
-    
-
-
-
-
-=======
->>>>>>> 1cde6960f9fc8ab00743597ea20f60a77c120f7d
- 	</body>
+  	<body>
+		<div class="jumbotron text-center">
+			<?php include('header.html')?>
+		</div>
+		<main>
+			<table class="table text-center">
+				<tr>
+   	 				<th class="text-center">Nom</th><th class="text-center">Quantité</th><th class="text-center">Prix</th>
+  				</tr>
+				<?php
+					$prixTotal =0;
+					try
+				  	{
+				  		$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
+						$req = "SELECT IdCmmande FROM `Commande` WHERE IdUser='".$_SESSION['id']."'" ;
+						$reponse = $bdd->query($req );
+						while ($donnees = $reponse->fetch())
+						{
+							$idCommande=$donnees['IdCmmande'];
+							$req = "SELECT * FROM `Produits` WHERE idCommande='".$idCommande."' " ;
+							$reponse1 = $bdd->query($req );
+							while ($donnees1 = $reponse1->fetch())
+							{
+								$fromages=$donnees1['idFromages'];
+								$quantite=$donnees1['quantite'];
+								$requete = "SELECT * FROM `Fromages` WHERE idFromages='".$fromages."' " ;
+								$reponseRequete = $bdd->query($requete );
+								while ($donneesRequete = $reponseRequete->fetch())
+								{
+									$nom=$donneesRequete['nom'];
+									$prix=$donneesRequete['prixKG'];
+									$prixTotal=$prixTotal+($prix*$quantite);
+									echo "<tr>";
+										echo "<td>".$nom."</td> <td>".$quantite." Kg</td><td>".$prix*$quantite."€</td>";
+									echo "</tr>";								
+								}
+							}
+						}
+						echo "<tr>";
+						echo "<td></td> <td></td><td>".$prixTotal."€</td>";
+						echo "</tr>";
+		   	   		}
+					catch (Exception $e)
+					{
+						die('Erreur : ' . $e->getMessage());
+					}
+				?>
+			</table>
+		</main>
+		<div class="jumbotron text-center col-sm-12 footerConn">
+			<?php include('footer.html')?>
+		</div>
+  </body>
 </html>

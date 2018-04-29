@@ -11,9 +11,13 @@ a:hover{
 	font-size:12px;
 	margin-top: -5px;
 }
-body{
+.bodyStyle{
+	/*background-color:#fafafa;*/
 	background-color:#fafafa;
+	background-image:url(img/fromages-fond.jpg);
+	background-repeat:repeat;
 }
+
 main{
 	margin-top:0px;
 	padding:3%;
@@ -33,7 +37,12 @@ table{
 	border:solid 1px;
 	margin-bottom :1%;
 	color : #cc0000;
+	background-color:#fafafa;
 }
+th{
+	background-color:#e6e6e6;
+}
+
 
 td{
 	border:solid 1px;
@@ -44,13 +53,16 @@ td{
 article{
 	background-color:#e6e6e6;
 	padding:3%;
+	margin-bottom:1%;
+	
 }
 section{
 	font-size:large;
 	color: #cc0000;
+	/*background-color:#fafafa;*/
 }
 .footerConn{
-	margin-top:15%;
+	margin-top:20%;
 }
 .retour{
 	font-size:large;

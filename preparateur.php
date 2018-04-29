@@ -30,24 +30,29 @@
 				?>
 				<form action="livraison.php" method="get">
 			  		
-			  		<div class="form-group col-sm-5"></div>
-    				<div class="form-group col-sm-2">
-			  			<select class="form-control" size="1" name="commande">
-							<?php
+			  		<div class="col-sm-12">
+				  		<div class="col-sm-5"></div>
+							<div class="col-sm-2">
+					  			<select class="form-control" size="1" name="commande">
+									<?php
 							
-							while ($donnees = $reponse->fetch())
-							{
-								echo '<option value="'.$donnees['IdCmmande'].'">'.$donnees['IdCmmande'].'</option>';
-							}
-							?>
+									while ($donnees = $reponse->fetch())
+									{
+										echo '<option value="'.$donnees['IdCmmande'].'">'.$donnees['IdCmmande'].'</option>';
+									}
+									?>
 
-			  			</select>
-			  		</div>
-			  		<div class="form-group col-sm-5"></div>
-					
-					<div class="col-sm-4"></div>
-		            	<input type="submit" value="Valider" class="col-sm-4 form-control "></br>
-		            <div class="col-sm-4"></div>
+					  			</select>
+					  		</div>
+				  		<div class="col-sm-5"></div>
+				  	</div>
+					<div class="col-sm-12">
+						<div class="col-sm-5"></div>
+							<div class="col-sm-2">
+						    	<input type="submit" value="Valider" class="form-control"></br>
+						    </div>
+				        <div class="col-sm-5"></div>
+				    </div>
 				</form>
 				<?php
 

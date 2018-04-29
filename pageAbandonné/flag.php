@@ -15,25 +15,19 @@
 			<?php include('header.html')?>
 		</div>
 		<main>
-		
-		<h4>
-			Les CTF informatique, font partie du domaine de la sécurité : les organisateurs mettent en place plusieurs épreuves et les participants doivent s’introduire dans un système afin de récupérer le drapeau (flag).
-			</br>
-			</br>
-			Selon votre niveau, vous aurez peut-être envie d’ignorer totalement certaines épreuves. Libre à vous, mais gardez en tête que les épreuves simples peuvent l’être vraiment ;-)
-			</br>
-		</h4>
-<!-- uu encodage --!>
-<!--
-Je crois que c'est vraiment trop simple là !
-it's really easy UU !
-flag:H36%&<F]M86=E<FEE>WDP=5]R95]A7V=O;V1?=S-B7V-R,6TQ;C-L?0``
-`
--->
+        	<h1 class="col-sm-12 text-center" >Vérifier votre flag ici !</h1>
+        	<form action="flag2.php" name="flag" method="post">
+		        <p>
+		        	<div class="form-group col-md-12">
+		           		<input type="text" name="flag" class="form-control" placeholder="Ex : MaFromagerie{le_flag}">
+		            </div>
+		            <div class="form-group col-md-12">
+		            	<input type="submit" value="Verifier">
+		            </div>            	
+			</form>
 		</main>
-		<div class="jumbotron text-center col-sm-12 footerConn">
-			<?php include('footer.html');?>
-		</div>
-	</body>
+        <div class="col-sm-12 jumbotron text-center footerConn">
+        	<?php include ('footer.html')//PIED DE PAGE?>
+        </div>
+  </body>
 </html>
-

@@ -62,7 +62,7 @@
 							echo '<td>'.$donnees['quantite'].' Kg</td>';
 							$prix = $donnees['quantite']*$donnees2['prixKG'];
 							$prixTotal = $prixTotal + $prix;
-							echo '<td> Prix : '.$prix.'</td>';
+							echo '<td> Prix : '.$prix.'€</td>';
 							echo '</tr>';
 						}
 					}
@@ -70,7 +70,7 @@
 					echo '<tr>';
 					echo '<td></td>';
 					echo '<td></td>';
-					echo '<td> Prix Total : '.$prixTotal.'</td>';
+					echo '<td> Prix Total : '.$prixTotal.' €</td>';
 					echo '</tr>';
 					?>
 				</table>	
