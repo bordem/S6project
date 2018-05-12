@@ -15,10 +15,10 @@
   		<div class="jumbotron text-center">
 			<?php include('header.html');?>
 		</div>
-    	
+
     <h1 class="col-sm-12 text-center">Commande a préparer :</h1>
 
-        <?php // connexion base de données
+        <?php
 
  try {
      $bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
@@ -26,16 +26,16 @@
 				//echo "Je suis connecté";
 				// On récupère tout le contenu de la table fromages
 				$reponse = $bdd->query('SELECT * FROM Commande WHERE Livraison = 0 ');
-				
+
 				?>
 				<form action="livraison.php" method="get">
-			  		
+
 			  		<div class="col-sm-12">
 				  		<div class="col-sm-5"></div>
 							<div class="col-sm-2">
 					  			<select class="form-control" size="1" name="commande">
 									<?php
-							
+
 									while ($donnees = $reponse->fetch())
 									{
 										echo '<option value="'.$donnees['IdCmmande'].'">'.$donnees['IdCmmande'].'</option>';

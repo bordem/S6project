@@ -2,7 +2,6 @@
 <head>
 	<title>Espace client</title>
 	<meta charset="utf-8">
-	<!--BOOTSTRAP-->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,7 +18,7 @@
 				  		{
 				  			$mail = $_POST['mail'];
 				  			$password = $_POST['pass'];
-				  			
+
 				  			$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
 				  			//TEST //$reponse = $bdd->prepare("SELECT * FROM `users` WHERE 1");
 							$reponse = $bdd->prepare("INSERT INTO `users`(`nom`, `prenom`, `login`, `password`, `email`, `status`, `Addr`) VALUES ('unknow','unknow','".$mail."','".$password."','".$mail."','client','adresse inconnu')");
@@ -30,13 +29,13 @@
 								header("Location:connexion.php");
 							}
 						}
-					}	
+					}
 					catch (Exception $e)
 					{
 						die('Erreur : ' . $e->getMessage());
 					}
 	?>
-  	
+
 	<main>
 	<h1 class="col-sm-12 text-center" >Espace client </h1>
 		<form method="post" action="client.php">
@@ -59,9 +58,6 @@
 					<div class="col-sm-1"></div>
 				</div>
 		</form>
-				
-				
-			<!--<center><img src="img/fromagerie.jpg" height="300" width="350"></img></center>-->
 			</p>
 	</main>
 	<div class="col-sm-12 jumbotron text-center footerConn">

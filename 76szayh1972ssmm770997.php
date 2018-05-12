@@ -1,7 +1,6 @@
 <?php
 session_start();
-//  $_SESSION["flag"]="This_should_be_kept_secret";
-setcookie ("flag","flag{d@m1n_h0w_y0u_f33l_s33ing_y0ur_c00ki3s_st0l3n}"); ?>
+setcookie ("flag","MaFromagerie{d@m1n_h0w_y0u_f33l_s33ing_y0ur_c00ki3s_st0l3n}"); ?>
 <html>
 <body bgcolor="#f4511e">
   <?php
@@ -37,22 +36,6 @@ setcookie ("flag","flag{d@m1n_h0w_y0u_f33l_s33ing_y0ur_c00ki3s_st0l3n}"); ?>
   $reponse->closeCursor(); // Termine le traitement de la requête
 
   ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

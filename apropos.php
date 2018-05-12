@@ -17,10 +17,10 @@
 		<main>
 
 		<h4>
-			Les CTF informatique, font partie du domaine de la sécurité : les organisateurs mettent en place plusieurs épreuves et les participants doivent s’introduire dans un système afin de récupérer le drapeau (flag).
+			<center> Notre site facilite pour vous l'achat des fromages ! </center>
 			</br>
 			</br>
-			Selon votre niveau, vous aurez peut-être envie d’ignorer totalement certaines épreuves. Libre à vous, mais gardez en tête que les épreuves simples peuvent l’être vraiment ;-)
+			<center> Nos sources sont les meilleurs ;-) </center>
 			</br>
 		</h4>
 

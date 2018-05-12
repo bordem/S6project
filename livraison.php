@@ -4,7 +4,6 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" type="image/png" href="img/icon.png" />
-		<!--BOOTSTRAP-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,14 +21,9 @@
 		      	{
 		      		echo 'Commande n° : '.$_GET['commande'].'</br>';
 		      		$bdd = new PDO('mysql:host=localhost;dbname=prince;charset=utf8', 'projet', 'projet');
-					//Si tout va bien, on peut continuer
-					//echo "Je suis connecté";
-					// On récupère tout le contenu de la table fromages
-					//PARTIE CLIENT, AFFICHAGE DES ATTRIBUTS DU CLIENTS A LIVRER
 					$reponse3 = $bdd->query('SELECT IdUser FROM Commande WHERE idCmmande ='.$_GET[commande].'');
 					while ($donnees= $reponse3->fetch())
 					{
-						//echo $donnees['IdUser'];
 						$reponse3 = $bdd->query('SELECT * FROM users WHERE idUser ='.$donnees['IdUser'].'');
 						while ($donneesClient= $reponse3->fetch())
 						{
@@ -66,26 +60,26 @@
 							echo '</tr>';
 						}
 					}
-					
+
 					echo '<tr>';
 					echo '<td></td>';
 					echo '<td></td>';
 					echo '<td> Prix Total : '.$prixTotal.' €</td>';
 					echo '</tr>';
 					?>
-				</table>	
-				
-					<input id="checkBox" type="checkbox">	
+				</table>
+
+					<input id="checkBox" type="checkbox">
 					Validez la livraison
        	   			<?php
        	   	}
-       	   	
+
 			catch (Exception $e)
 			{
 				die('Erreur : ' . $e->getMessage());
 			}
-				
-				
+
+
 			?>
 		</main>
 		<div class="jumbotron text-center col-sm-12">

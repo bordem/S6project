@@ -15,10 +15,10 @@
 
   //
   $id = $_GET['id'];
-  // On récupère tout le contenu de la table from
+  // On récupère tout le contenu de la table fromage
   $reponse = $bdd->query("SELECT nom,prixKG FROM Fromages WHERE idFromages=$id");
   // On affiche chaque entrée une à une
-		$i=0; 
+		$i=0;
   while ($donnees = $reponse->fetch())
   {
 		echo  $i;
@@ -33,28 +33,5 @@
   $reponse->closeCursor(); // Termine le traitement de la requête
 
   ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

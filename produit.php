@@ -16,9 +16,8 @@
 	  		$idFromage = $_GET['id'];?>
   		</div>
 		<main>
-			
+
 		<?php
-		  //afficher les fromages pour chaque id
 		  try
 		  {
 		  	// On se connecte à MySQL
@@ -32,7 +31,7 @@
 		  $id = $_GET['id'];
 		  // On récupère tout le contenu de la table from
 		  $reponse = $bdd->query("SELECT nom,prixKG,animal,imgPath FROM Fromages WHERE idFromages=$id");
-		  // On affiche chaque entrée une à une 
+		  // On affiche chaque entrée une à une
 		  while ($donnees = $reponse->fetch())
 		  {
 		  	?>
@@ -73,7 +72,7 @@
 		  $reponse->closeCursor(); // Termine le traitement de la requête
 
 		 ?>
-			
+
 		</main>
 		<div class="col-sm-12 jumbotron text-center">
 			<?php include('footer.html');?>

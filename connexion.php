@@ -5,7 +5,6 @@
     <script type="text/javascript" src="hello.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" type="image/png" href="img/icon.png" />
-    <!--BOOTSTRAP-->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -40,7 +39,7 @@
                   header("Location:preparateur.php");// sinon a la page preparateur
                 }
           }
-          else { //sinon 
+          else { //sinon
              echo "<h4>Vous avez saisi des mauvais identifiants veillez ressayer</h4>";
           }
 
