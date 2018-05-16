@@ -51,16 +51,16 @@
       } ?>
         <h1 class="col-sm-12 text-center">Page de connexion</h1>
         <main>
-		    <form action="connexion.php" name="Connexion" method="post">
+		    <form action="#" name="Connexion" method="post">
 		        <p>
 		        	<div class="form-group col-md-6">
-		           		<input type="text" name="Login" class="form-control" placeholder="Email">
+		           		<input type="text" name="usermail" class="form-control" placeholder="Email">
 		            </div>
 		            <div class="form-group col-md-6">
-		            	<input type="password" name="Password" class="form-control" placeholder="Mot de passe">
+		            	<input type="password" name="password" class="form-control" placeholder="Mot de passe">
 		            </div>
 		            <div class="col-sm-0"></div>
-		            	<center><input onClick="Login()" type="submit" value="connexion" name="connexion"/></center>
+		            	<center><button onClick="login()" >Connexion</button></center>
 		            <div class="col-sm-0"></div>
 		        </p>
 		    </form>

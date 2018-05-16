@@ -1,7 +1,7 @@
-function Login(){
-	var email=document.login.email.value;
+function login(){
+	var email=document.Connexion.usermail.value;
 	var mail=email.toLowerCase();
-	var password=document.login.password.value;
+	var password=document.Connexion.password.value;
 	password=password.toLowerCase();
 	if (email=="michel.micheline@hotmail.fr" && password=="micheline") {
 	    alert("Bravo !,Vous avez trouvé le mot de passe :D et c'est votre cadeau : MaFormagerie{cyber_db_fuck3r}");
